@@ -39,7 +39,7 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 	ft_printf("pb\n");
 }
 
-void	pa(t_stack *stack_a, t_stack *stack_b)
+void	pa(t_stack *stack_b, t_stack *stack_a)
 {
 	int	temporary;
 	int	temporary_two;
@@ -50,18 +50,18 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 	counter = -1;
 	while (++counter < stack_a->size)
 	{
-		stack_b->stack[counter] = stack_b->stack[counter + 1];
-		stack_b->index[counter] = stack_b->index[counter + 1];
+		stack_a->stack[counter] = stack_a->stack[counter + 1];
+		stack_a->index[counter] = stack_a->index[counter + 1];
 	}
-	stack_b->size--;
-	stack_a->size++;
+	stack_a->size--;
+	stack_b->size++;
 	counter = stack_b->size;
 	while (--counter > 0)
 	{
-		stack_a->stack[counter] = stack_a->stack[counter - 1];
-		stack_a->index[counter] = stack_a->index[counter - 1];
+		stack_b->stack[counter] = stack_b->stack[counter - 1];
+		stack_b->index[counter] = stack_b->index[counter - 1];
 	}
-	stack_a->stack[0] = temporary;
-	stack_a->index[0] = temporary_two;
+	stack_b->stack[0] = temporary;
+	stack_b->index[0] = temporary_two;
 	ft_printf("pa\n");
 }

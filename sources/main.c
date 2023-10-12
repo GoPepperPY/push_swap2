@@ -18,8 +18,12 @@ int	main(int counter, char **argument)
 {
 	t_stack	stack_a;
 	t_stack	stack_b;
-
+	int	counter_one;
+	
+	counter_one = -1;
 	fill_stack_a(&stack_a, &stack_b, argument, counter);
 	sort(&stack_a, &stack_b);
+	while (stack_a.stack[++counter_one])
+		ft_printf("%d\n", stack_a.stack[counter_one]);
 	return (0);
 }

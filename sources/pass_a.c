@@ -21,7 +21,7 @@ int	highest_range(t_stack *stack)
 	counter = 0;
 	value = 0;
 	position = 0;
-	while (stack->index[counter])
+	while (counter < stack->size)
 	{
 		if (stack->index[counter] > value)
 		{

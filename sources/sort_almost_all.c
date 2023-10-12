@@ -21,8 +21,8 @@ void	sort_almost_all(t_stack *stack_a, t_stack *stack_b)
 	t_chuck	chuck_five;
 
 	chuck_one.min_range = 0;
-	chuck_one.max_range = highest(stack_a) / 5 - 1;
-	chuck_two.min_range = highest(stack_a) / 5;
+	chuck_one.max_range = highest(stack_a) / 5;
+	chuck_two.min_range = chuck_one.max_range + 1;
 	chuck_two.max_range = (highest(stack_a) / 5) * 2;
 	chuck_three.min_range = chuck_two.max_range + 1;
 	chuck_three.max_range = (highest(stack_a) / 5) * 3;
