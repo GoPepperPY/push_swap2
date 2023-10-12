@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 09:12:49 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/11 16:35:54 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/12 16:38:29 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	sort(t_stack *stack_a, t_stack *stack_b)
 		sort_almost_all(stack_a, stack_b);
 		organize(stack_a, stack_b);
 	}
-	// else
-	// {
-	// 	sort_almost_all_2(stack_a, stack_b);
-	// 	organize(stack_a, stack_b);
-	// }
+	else
+	{
+		sort_almost_all_2(stack_a, stack_b);
+		organize(stack_a, stack_b);
+	}
 }

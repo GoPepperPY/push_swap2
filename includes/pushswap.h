@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 09:24:09 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/11 16:41:24 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/12 16:45:54 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ void	organize(t_stack *stack_a, t_stack *stack_b);
 void	chuck_sort(t_stack *stack_a, t_stack *stack_b, t_chuck chuck);
 void	push_below(t_stack *a, t_stack *b, int value);
 void	push_above(t_stack *a, t_stack *b, int value);
+void	sort_almost_all_2(t_stack *stack_a, t_stack *stack_b);
 
 #endif
