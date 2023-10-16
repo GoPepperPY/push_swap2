@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 13:26:22 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/11 16:24:10 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:26:49 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	passing_b(t_stack *stack_a, t_stack *stack_b, int a, int b)
 			pb(stack_a, stack_b);
 			counter++;
 			if (counter == 2)
-				break;
+				break ;
 		}
 		else
 			ra(stack_a);

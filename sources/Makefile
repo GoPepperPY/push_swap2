@@ -15,7 +15,7 @@ NAME = push_swap
 SRCS = main.c functions.c ft_calloc.c push.c swap.c reverse_rotate.c rotate.c \
 		printf_utils.c printf_utils_two.c ft_printf.c sort.c \
 		sort_five_numbers.c sort_four_numbers.c sort_three_numbers.c \
-		sort_almost_all.c pass_a.c chuck_sort.c sort_almost_all_2.c
+		sort_almost_all.c pass_a.c chuck_sort.c sort_almost_all_2.c checker.c
 
 CC = cc
 RM = rm -f

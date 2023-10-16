@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 09:24:09 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/12 16:45:54 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:35:37 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int		highest(t_stack *stack_a);
 int	highest_range(t_stack *stack);
 int	highest_range(t_stack *stack);
 int	numbers_of_chuck(t_stack *stack_a, t_chuck chuck);
+int	checker(t_stack *arguments);
 
 void	pb(t_stack *stack_a, t_stack *stack_b);
 void	pa(t_stack *stack_a, t_stack *stack_b);
@@ -71,5 +72,6 @@ void	chuck_sort(t_stack *stack_a, t_stack *stack_b, t_chuck chuck);
 void	push_below(t_stack *a, t_stack *b, int value);
 void	push_above(t_stack *a, t_stack *b, int value);
 void	sort_almost_all_2(t_stack *stack_a, t_stack *stack_b);
+void	free_all(t_stack *a, t_stack *b);
 
 #endif

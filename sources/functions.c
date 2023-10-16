@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:19:18 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/11 16:20:06 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:33:57 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,25 +77,15 @@ void	give_the_index(t_stack *stack, t_stack *substitute)
 	}
 }
 
-void	fill_stack_a(t_stack *a, t_stack *b, char **arguments, int counter)
+void	fill_stack_a_two(t_stack *a, char **arguments, t_stack *substitute)
 {
 	int		number;
 	int		counter_one;
 	int		counter_two;
-	t_stack	substitute;
 
 	counter_one = 1;
 	number = 0;
 	counter_two = 0;
-	a->stack = ft_calloc((counter - 1), sizeof(int));
-	a->index = ft_calloc((counter - 1), sizeof(int));
-	b->stack = ft_calloc((counter - 1), sizeof(int));
-	b->index = ft_calloc((counter - 1), sizeof(int));
-	substitute.stack = ft_calloc((counter - 1), sizeof(int));
-	substitute.index = ft_calloc((counter - 1), sizeof(int));
-	substitute.size = counter - 1;
-	a->size = counter - 1;
-	b->size = 0;
 	while (counter_one <= a->size)
 	{
 		number = ft_atoi(arguments[counter_one]);
@@ -108,10 +98,27 @@ void	fill_stack_a(t_stack *a, t_stack *b, char **arguments, int counter)
 	while (counter_one <= a->size)
 	{
 		number = ft_atoi(arguments[counter_one]);
-		substitute.stack[counter_two] = number;
+		substitute->stack[counter_two] = number;
 		counter_one++;
 		counter_two++;
 	}
-	order_the_array(&substitute);
-	give_the_index(a, &substitute);
+	order_the_array(substitute);
+	give_the_index(a, substitute);
+	free (substitute);
+}
+
+void	fill_stack_a(t_stack *a, t_stack *b, char **arguments, int counter)
+{
+	t_stack	substitute;
+
+	a->stack = ft_calloc((counter - 1), sizeof(int));
+	a->index = ft_calloc((counter - 1), sizeof(int));
+	b->stack = ft_calloc((counter - 1), sizeof(int));
+	b->index = ft_calloc((counter - 1), sizeof(int));
+	substitute.stack = ft_calloc((counter - 1), sizeof(int));
+	substitute.index = ft_calloc((counter - 1), sizeof(int));
+	substitute.size = counter - 1;
+	a->size = counter - 1;
+	b->size = 0;
+	fill_stack_a_two(a, arguments, &substitute);
 }

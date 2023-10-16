@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:27:43 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/12 17:22:24 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/16 16:59:23 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 void	sort_almost_all_2(t_stack *stack_a, t_stack *stack_b)
 {
-	t_chuck	chuck_one;
-	t_chuck	chuck_two;
+	t_chuck	chuck;
+	int		counter;
 
-	chuck_one.min_range = 0;
-	chuck_one.max_range = highest(stack_a) / 2 - 1;
-	chuck_two.min_range = highest(stack_a) / 2;
-	chuck_two.max_range = highest(stack_a);
-	chuck_sort (stack_a, stack_b, chuck_one);
-	chuck_sort (stack_a, stack_b, chuck_two);
+	counter = 0;
+	chuck.max_range = -1;
+	while (++counter <= 11)
+	{
+		chuck.min_range = chuck.max_range + 1;
+		if (counter == 11)
+			chuck.max_range = highest(stack_a);
+		else
+			chuck.max_range = (highest(stack_a) / 11) * counter;
+		chuck_sort (stack_a, stack_b, chuck);
+	}
 }

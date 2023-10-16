@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:46:16 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/11 17:36:09 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:30:42 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,16 @@ int	highest_range(t_stack *stack)
 	return (position);
 }
 
+void	too_many_lines(int temporary, t_stack *stack_b)
+{
+	while (1)
+	{
+		if (stack_b->index[0] == temporary)
+			break ;
+		rrb(stack_b);
+	}
+}
+
 void	organize(t_stack *stack_a, t_stack *stack_b)
 {
 	int	highest_number_position;
@@ -53,12 +63,7 @@ void	organize(t_stack *stack_a, t_stack *stack_b)
 		}
 		else 
 		{
-			while (1)
-			{
-				if (stack_b->index[0] == temporary)
-					break ;
-				rrb(stack_b);
-			}
+			too_many_lines(temporary, stack_b);
 		}
 		pa(stack_a, stack_b);
 	}

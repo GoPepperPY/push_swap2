@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 09:12:49 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/16 17:36:40 by goda-sil         ###   ########.fr       */
+/*   Created: 2023/10/16 17:12:24 by goda-sil          #+#    #+#             */
+/*   Updated: 2023/10/16 17:35:54 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-void	sort(t_stack *stack_a, t_stack *stack_b)
+int	checker(t_stack *stack_a)
 {
-	if (stack_a->size == 3)
-		sort_three_numbers(stack_a);
-	if (stack_a->size == 5)
-		sort_five_numbers(stack_a, stack_b);
-	if (stack_a->size == 4)
-		sort_four_numbers(stack_a, stack_b);
-	if (stack_a->size > 5 && stack_a->size <= 350)
+	int	counter_one;
+	int	counter_two;
+
+	counter_one = 0;
+	while (stack_a->stack[counter_one])
 	{
-		sort_almost_all(stack_a, stack_b);
-		organize(stack_a, stack_b);
+		counter_two = 0;
+		while (stack_a->stack[counter_two])
+		{
+			if ((stack_a->stack[counter_one] == stack_a->stack[counter_two]) && \
+			(counter_one != counter_two))
+				return (0);
+			counter_two++;
+		}
+		counter_one++;
 	}
-	else if (stack_a->size > 350)
-	{
-		sort_almost_all_2(stack_a, stack_b);
-		organize(stack_a, stack_b);
-	}
+	return (1);
+}
+
+void	free_all(t_stack *a, t_stack *b)
+{
+	free(a);
+	free(b);
 }
