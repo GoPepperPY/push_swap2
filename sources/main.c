@@ -14,12 +14,19 @@
 
 int	main(int counter, char **argument)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	t_stack	*substitute;
 
-	fill_stack_a(&stack_a, &stack_b, argument, counter);
-	if (checker(&stack_a) == 1)
-		sort(&stack_a, &stack_b);
-	free_all(&stack_a, &stack_b);
+	stack_a = NULL;
+	stack_b = NULL;
+	substitute = NULL;
+	if (counter >= 2)
+	{
+		fill_stack_a(stack_a, stack_b, substitute, argument, counter);
+		if (checker(stack_a) == 1)
+			sort(stack_a, stack_b);
+		free_all(stack_a, stack_b, substitute);	
+	}
 	return (0);
 }

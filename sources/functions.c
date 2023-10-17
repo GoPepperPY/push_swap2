@@ -104,21 +104,18 @@ void	fill_stack_a_two(t_stack *a, char **arguments, t_stack *substitute)
 	}
 	order_the_array(substitute);
 	give_the_index(a, substitute);
-	free (substitute);
 }
 
-void	fill_stack_a(t_stack *a, t_stack *b, char **arguments, int counter)
+void	fill_stack_a(t_stack *a, t_stack *b, t_stack *substitute, char **arguments, int counter)
 {
-	t_stack	substitute;
-
-	a->stack = ft_calloc((counter - 1), sizeof(int));
-	a->index = ft_calloc((counter - 1), sizeof(int));
-	b->stack = ft_calloc((counter - 1), sizeof(int));
-	b->index = ft_calloc((counter - 1), sizeof(int));
-	substitute.stack = ft_calloc((counter - 1), sizeof(int));
-	substitute.index = ft_calloc((counter - 1), sizeof(int));
-	substitute.size = counter - 1;
+	a->stack = ft_calloc(counter + 1, sizeof(int));
+	a->index = ft_calloc(counter + 1, sizeof(int));
+	b->stack = ft_calloc(counter + 1, sizeof(int));
+	b->index = ft_calloc(counter + 1, sizeof(int));
+	substitute->stack = ft_calloc(counter, sizeof(int));
+	substitute->index = ft_calloc(counter, sizeof(int));
+	substitute->size = counter - 1;
 	a->size = counter - 1;
 	b->size = 0;
-	fill_stack_a_two(a, arguments, &substitute);
+	fill_stack_a_two(a, arguments, substitute);
 }

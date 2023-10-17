@@ -33,8 +33,9 @@ int	checker(t_stack *stack_a)
 	return (1);
 }
 
-void	free_all(t_stack *a, t_stack *b)
+void	free_all(t_stack *a, t_stack *b, t_stack *substitute)
 {
-	free(a);
-	free(b);
+	free(a->stack);
+	free(b->stack);
+	free(substitute->stack);
 }

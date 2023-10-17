@@ -42,8 +42,8 @@ int	checker(t_stack *arguments);
 
 void	pb(t_stack *stack_a, t_stack *stack_b);
 void	pa(t_stack *stack_a, t_stack *stack_b);
-void	fill_stack_a(t_stack *a, t_stack *b, \
-			char **arguments, int counter);
+void	fill_stack_a(t_stack *a, t_stack *b, t_stack \
+*substitute, char **arguments, int counter);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t	nmemb, size_t size);
 void	sa(t_stack *stack_a);
@@ -72,6 +72,6 @@ void	chuck_sort(t_stack *stack_a, t_stack *stack_b, t_chuck chuck);
 void	push_below(t_stack *a, t_stack *b, int value);
 void	push_above(t_stack *a, t_stack *b, int value);
 void	sort_almost_all_2(t_stack *stack_a, t_stack *stack_b);
-void	free_all(t_stack *a, t_stack *b);
+void	free_all(t_stack *a, t_stack *b, t_stack *substitute);
 
 #endif
