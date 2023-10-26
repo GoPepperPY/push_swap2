@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:19:18 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/26 11:20:18 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:58:12 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_atoi(char *nptr)
 		rest = (nptr[counter] - 48) + (rest * 10);
 		counter++;
 	}
-	if (rest > 2147483647)
+	if (rest > 2147483647 || rest < -2147483648)
 		return (-1);
 	return (rest * saver);
 }

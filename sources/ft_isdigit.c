@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:01:39 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/26 17:20:58 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:45:22 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@ int	ft_isdigit_2(char *stack)
 	counter = 0;
 	while (stack[counter])
 	{
-		if (!(stack[counter] >= 48 && stack[counter] <= 57))
+		if (stack[counter] == '-')
+			counter++;
+		else if (!(stack[counter] >= 48 && stack[counter] <= 57))
 			return (0);
-		counter++;
+		else
+			counter++;
 	}
 	return (1);
 }

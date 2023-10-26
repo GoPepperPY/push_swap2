@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 08:18:14 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/24 17:55:09 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:54:22 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int	main(int counter, char **argument)
 		while (argument[++counter_two])
 		{
 			if (ft_isdigit_2(argument[counter_two]) == 0 || \
-			ft_atoi(argument[counter_two]) == -1)
+			(ft_atoi(argument[counter_two]) == -1 && !(argument[counter_two] \
+			[0] == '-' && argument[counter_two][1] == '1')))
 			{
 				ft_printf("Error");
 				return (0);
