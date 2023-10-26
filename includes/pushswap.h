@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 09:24:09 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/26 12:13:07 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:19:41 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <unistd.h>
 # include <string.h>
 # include "ft_printf.h"
-
 
 typedef struct s_stack{
 	int				size;
@@ -34,18 +33,17 @@ typedef struct s_chuck{
 int		ft_atoi(char *number);
 int		lowest(t_stack *stack_a);
 int		highest(t_stack *stack_a);
-int	highest_range(t_stack *stack);
-int	highest_range(t_stack *stack);
-int	numbers_of_chuck(t_stack *stack_a, t_chuck chuck);
-int	checker(t_stack *arguments);
-int	ft_isdigit_2(char *stack);
-int	ft_isdigit(int c);
-int	checker_2(t_stack *a);
+int		highest_range(t_stack *stack);
+int		highest_range(t_stack *stack);
+int		numbers_of_chuck(t_stack *stack_a, t_chuck chuck);
+int		checker(t_stack *arguments);
+int		ft_isdigit_2(char *stack);
+int		checker_2(t_stack *a);
 
 void	pb(t_stack *stack_a, t_stack *stack_b);
 void	pa(t_stack *stack_a, t_stack *stack_b);
-void	fill_stack_a(t_stack *a, t_stack *b, char **arguments,\
- int counter);
+void	fill_stack_a(t_stack *a, t_stack *b, char **arguments, \
+	int counter);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t	nmemb, size_t size);
 void	sa(t_stack *stack_a);
