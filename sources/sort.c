@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 09:12:49 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/16 17:36:40 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:15:42 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	sort(t_stack *stack_a, t_stack *stack_b)
 {
+	if (stack_a->size == 2)
+	{
+		if (stack_a->stack[1] < stack_a->stack[0])
+			ra(stack_a);
+	}
 	if (stack_a->size == 3)
 		sort_three_numbers(stack_a);
 	if (stack_a->size == 5)

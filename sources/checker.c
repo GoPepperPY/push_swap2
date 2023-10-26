@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:12:24 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/24 18:02:57 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:41:30 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,11 @@ int	checker_2(t_stack *a)
 	int	counter;
 
 	counter = 0;
-	while (a->stack[counter])
-	{
-		if (a->stack[counter] > a->stack[counter + 1])
-			return (1);
+	while (a->stack[counter] < a->stack[counter + 1] && counter <= a->size)
 		counter++;
-	}
-	return (0);
+	if (counter == a->size - 1)
+		return (0);
+	return (1);
 }
 
 void	free_all(t_stack *a, t_stack *b)
