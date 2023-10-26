@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/18 11:09:03 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/17 11:27:51 by goda-sil         ###   ########.fr       */
+/*   Created: 2022/11/07 11:01:39 by goda-sil          #+#    #+#             */
+/*   Updated: 2023/10/24 17:04:51 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-void	*ft_calloc(size_t	nmemb, size_t size)
+int	ft_isdigit(int c)
 {
-	void	*pointer;
-
-	pointer = malloc(nmemb * size);
-	if (pointer == NULL)
-		return (pointer);
-	ft_bzero(pointer, size * nmemb);
-	return (pointer);
+	if (c >= 48 && c <= 57)
+		return (1);
+	else
+		return (0);
 }
 
-void	ft_bzero(void *s, size_t n)
+int	ft_isdigit_2(char *stack)
 {
-	size_t	counter;
+	int	counter;
 
 	counter = 0;
-	while (counter < n)
-		((unsigned char *)s)[counter++] = '\0';
+	while (stack[counter])
+	{
+		if ((stack[counter] >= 'a' && stack[counter] <= 'z') || (stack[counter] \
+		>= 'A' && stack[counter] <= 'Z'))
+			return (0);
+		counter++;
+	}
+	return (1);
 }

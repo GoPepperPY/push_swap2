@@ -6,33 +6,37 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:19:18 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/16 17:33:57 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/24 17:57:07 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-int	ft_atoi(char *number)
+int	ft_atoi(char *nptr)
 {
 	int	counter;
 	int	saver;
-	int	rest;
+	long	rest;
 
 	rest = 0;
 	saver = 1;
 	counter = 0;
-	if (number[counter] == '-')
+	while (nptr[counter] == 32 || (nptr[counter] >= 9 && nptr[counter] <= 13))
+		counter++;
+	if (nptr[counter] == '-')
 	{
 		saver = -1;
 		counter++;
 	}
-	else if (number[counter] == '+')
+	else if (nptr[counter] == '+')
 		counter++;
-	while (number[counter] >= '0' && number[counter] <= '9')
+	while (nptr[counter] >= '0' && nptr[counter] <= '9')
 	{
-		rest = (number[counter] - 48) + (rest * 10);
+		rest = (nptr[counter] - 48) + (rest * 10);
 		counter++;
 	}
+	if (rest > 2147483647)
+		return(-1);
 	return (rest * saver);
 }
 
@@ -106,16 +110,20 @@ void	fill_stack_a_two(t_stack *a, char **arguments, t_stack *substitute)
 	give_the_index(a, substitute);
 }
 
-void	fill_stack_a(t_stack *a, t_stack *b, t_stack *substitute, char **arguments, int counter)
+void	fill_stack_a(t_stack *a, t_stack *b, char **arguments, int counter)
 {
-	a->stack = ft_calloc(counter + 1, sizeof(int));
-	a->index = ft_calloc(counter + 1, sizeof(int));
-	b->stack = ft_calloc(counter + 1, sizeof(int));
-	b->index = ft_calloc(counter + 1, sizeof(int));
-	substitute->stack = ft_calloc(counter, sizeof(int));
-	substitute->index = ft_calloc(counter, sizeof(int));
-	substitute->size = counter - 1;
+	t_stack	substitute;
+
+	a->stack = ft_calloc(counter, sizeof(int));
+	a->index = ft_calloc(counter, sizeof(int));
+	b->stack = ft_calloc(counter, sizeof(int));
+	b->index = ft_calloc(counter, sizeof(int));
+	substitute.stack = ft_calloc(counter, sizeof(int));
+	substitute.index = ft_calloc(counter, sizeof(int));
 	a->size = counter - 1;
+	substitute.size = a->size;
 	b->size = 0;
-	fill_stack_a_two(a, arguments, substitute);
+	fill_stack_a_two(a, arguments, &substitute);
+	free(substitute.stack);
+	free(substitute.index);
 }

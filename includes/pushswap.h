@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 09:24:09 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/16 17:35:37 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/24 18:03:35 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <unistd.h>
 # include <string.h>
 # include "ft_printf.h"
-
 
 
 typedef struct s_stack{
@@ -39,11 +38,14 @@ int	highest_range(t_stack *stack);
 int	highest_range(t_stack *stack);
 int	numbers_of_chuck(t_stack *stack_a, t_chuck chuck);
 int	checker(t_stack *arguments);
+int	ft_isdigit_2(char *stack);
+int	ft_isdigit(int c);
+int	checker_2(t_stack *a);
 
 void	pb(t_stack *stack_a, t_stack *stack_b);
 void	pa(t_stack *stack_a, t_stack *stack_b);
-void	fill_stack_a(t_stack *a, t_stack *b, t_stack \
-*substitute, char **arguments, int counter);
+void	fill_stack_a(t_stack *a, t_stack *b, char **arguments,\
+ int counter);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t	nmemb, size_t size);
 void	sa(t_stack *stack_a);
@@ -61,8 +63,6 @@ void	give_the_index(t_stack *stack, t_stack *substitute);
 void	order_the_array(t_stack *substitute);
 void	sort_five_numbers(t_stack *stack_a, t_stack *stack_b);
 void	passing_b(t_stack *stack_a, t_stack *stack_b, int a, int b);
-int	lowest(t_stack *stack_a);
-int	highest(t_stack *stack_a);
 void	sort_four_numbers(t_stack *stack_a, t_stack *stack_b);
 void	sort_three_numbers(t_stack *stack_a);
 void	sort(t_stack *stack_a, t_stack *stack_b);
@@ -72,6 +72,6 @@ void	chuck_sort(t_stack *stack_a, t_stack *stack_b, t_chuck chuck);
 void	push_below(t_stack *a, t_stack *b, int value);
 void	push_above(t_stack *a, t_stack *b, int value);
 void	sort_almost_all_2(t_stack *stack_a, t_stack *stack_b);
-void	free_all(t_stack *a, t_stack *b, t_stack *substitute);
+void	free_all(t_stack *a, t_stack *b);
 
 #endif
