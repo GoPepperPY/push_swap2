@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:19:18 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/26 17:58:12 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:29:06 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	ft_atoi(char *nptr)
 		rest = (nptr[counter] - 48) + (rest * 10);
 		counter++;
 	}
+	rest = rest * saver;
 	if (rest > 2147483647 || rest < -2147483648)
 		return (-1);
 	return (rest * saver);
@@ -46,7 +47,7 @@ void	order_the_array(t_stack *substitute)
 	int	temporary;
 
 	counter = 0;
-	while (substitute->stack[counter])
+	while (counter < substitute->size)
 	{
 		if (substitute->stack[counter] > substitute->stack[counter + 1] \
 		&& counter < substitute->size - 1)
@@ -61,7 +62,6 @@ void	order_the_array(t_stack *substitute)
 	counter = -1;
 	while (++counter < substitute->size)
 		substitute->index[counter] = counter + 1;
-	counter = -1;
 }
 
 void	give_the_index(t_stack *stack, t_stack *substitute)
@@ -70,10 +70,10 @@ void	give_the_index(t_stack *stack, t_stack *substitute)
 	int	counter_two;
 
 	counter_one = -1;
-	while (stack->stack[++counter_one])
+	while (++counter_one < stack->size)
 	{
 		counter_two = -1;
-		while (substitute->stack[++counter_two])
+		while (++counter_two < stack->size)
 		{
 			if (substitute->stack[counter_two] == stack->stack[counter_one])
 				stack->index[counter_one] = substitute->index[counter_two];

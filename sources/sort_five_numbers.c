@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 13:26:22 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/10/16 17:26:49 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/27 15:47:39 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void	sort_five_numbers(t_stack *stack_a, t_stack *stack_b)
 	int	l;
 	int	h;
 
-	l = lowest(stack_a);
-	h = highest(stack_a);
+	l = 1;
+	h = stack_a->size;
 	passing_b(stack_a, stack_b, l, h);
 	sort_three_numbers(stack_a);
 	pa(stack_a, stack_b);

@@ -6,7 +6,7 @@
 /*   By: goda-sil <goda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 12:14:25 by goda-sil          #+#    #+#             */
-/*   Updated: 2023/09/27 12:27:24 by goda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/27 15:34:13 by goda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	sort_four_numbers(t_stack *stack_a, t_stack *stack_b)
 {
-	int	counter;
-
-	counter = 0;
-	while (stack_a->stack[counter])
+	while (1)
 	{
-		if (stack_a->stack[counter] == lowest(stack_a))
+		if (stack_a->index[0] == 1)
 		{
 			pb(stack_a, stack_b);
 			break ;
