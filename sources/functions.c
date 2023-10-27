@@ -12,7 +12,7 @@
 
 #include "../includes/pushswap.h"
 
-int	ft_atoi(char *nptr)
+long ft_atoi(char *nptr)
 {
 	int		counter;
 	int		saver;
@@ -35,9 +35,6 @@ int	ft_atoi(char *nptr)
 		rest = (nptr[counter] - 48) + (rest * 10);
 		counter++;
 	}
-	rest = rest * saver;
-	if (rest > 2147483647 || rest < -2147483648)
-		return (-1);
 	return (rest * saver);
 }
 

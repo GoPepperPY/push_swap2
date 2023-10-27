@@ -23,9 +23,8 @@ int	main(int counter, char **argument)
 	{
 		while (argument[++counter_two])
 		{
-			if (ft_isdigit_2(argument[counter_two]) == 0 || \
-			(ft_atoi(argument[counter_two]) == -1 && !(argument[counter_two] \
-			[0] == '-' && argument[counter_two][1] == '1')))
+			if (ft_isdigit_2(argument[counter_two]) == 0 || (ft_atoi(argument \
+			[counter_two]) > 2147483647) || (ft_atoi(argument[counter_two]) < -2147483648))
 			{
 				ft_printf("Error");
 				return (0);

@@ -30,7 +30,7 @@ typedef struct s_chuck{
 	int				max_range;
 }					t_chuck;
 
-int		ft_atoi(char *number);
+long		ft_atoi(char *number);
 int		lowest(t_stack *stack_a);
 int		highest(t_stack *stack_a);
 int		highest_range(t_stack *stack);
